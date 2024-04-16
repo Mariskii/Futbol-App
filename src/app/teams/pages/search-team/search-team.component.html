@@ -17,5 +17,6 @@
     [image]="team.logo"
     [title]="team.name"
     [aditionalInfo]="team.code"
-    [routerLink]="['/team',team.id]"/>
+    [routerLink]="['/teams', selectedLeagueId.toString(), team.id.toString()]"/>
+
 }

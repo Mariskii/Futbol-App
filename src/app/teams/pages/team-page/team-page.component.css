@@ -1,0 +1,28 @@
+* {
+  margin-bottom: 0;
+}
+
+.team-container {
+  background-color: aliceblue;
+}
+
+.logo {
+  width: 18em;
+  height: 15em;
+}
+
+.team-data {
+  list-style: none;
+  /*TODO: Pendiente de arreglar, pinta sobre los datos generales del equipo y ahi no hace falta*/
+  background-color: aliceblue;
+  font-size: larger;
+}
+
+.team-info {
+  background-color: aliceblue;
+
+}
+
+.img-starium {
+  width: 100%;
+}

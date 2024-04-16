@@ -10,7 +10,7 @@ const routes: Routes = [
     component: LayoutTeamsPageComponent,
     children: [
       {path: 'search-teams', component: SearchTeamComponent},
-      {path: 'team/:id', component: TeamPageComponent},
+      {path: 'teams/:leagueIdteam/:id', component: TeamPageComponent},
       {path: '**', redirectTo: 'search-teams'}
     ]
   }
