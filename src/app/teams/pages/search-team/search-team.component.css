@@ -1,0 +1,13 @@
+.ligue-selector {
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.ligue-selector:hover {
+  background-color: darkcyan;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+}

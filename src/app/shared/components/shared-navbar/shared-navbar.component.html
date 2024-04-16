@@ -4,14 +4,3 @@
 
   <h1 class="text-light">Champions Finder</h1>
 </div>
-
-<div class="d-flex flex-row justify-content-around bg-secondary">
-  @for (item of itemsLeagues; track $index) {
-
-    <div class="ligue-selector d-flex justify-content-center flex-row w-100 h-100 ">
-      <img class="m-3" [src]="item.image" alt="item.title">
-      <p class="align-self-center">{{ item.title }}</p>
-    </div>
-
-  }
-</div>

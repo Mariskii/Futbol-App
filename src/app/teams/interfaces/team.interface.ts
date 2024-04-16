@@ -1,7 +1,4 @@
-export interface Team {
-  get:        string;
-  parameters: Parameters;
-  errors:     any[];
+export interface TeamResponse {
   results:    number;
   paging:     Paging;
   response:   Response[];
@@ -17,11 +14,11 @@ export interface Parameters {
 }
 
 export interface Response {
-  team:  TeamClass;
+  team:  Team;
   venue: Venue;
 }
 
-export interface TeamClass {
+export interface Team {
   id:       number;
   name:     string;
   code:     string;

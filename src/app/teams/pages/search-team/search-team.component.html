@@ -1,1 +1,20 @@
-<p>search-team works!</p>
+<shared-navbar  #navbar/>
+
+<div class="d-flex flex-row justify-content-around bg-secondary">
+  @for (item of itemsLeagues; track $index) {
+
+    <div (click)="onChangeLeague(item.id)" class="ligue-selector d-flex justify-content-center flex-row w-100 h-100 ">
+      <img class="m-3" [src]="item.image" alt="item.title">
+      <p class="align-self-center">{{ item.title }}</p>
+    </div>
+
+  }
+</div>
+
+@for (team of searchedTeams; track $index) {
+
+  <shared-result-card
+    [image]="team.logo"
+    [title]="team.name"/>
+
+}
