@@ -12,4 +12,7 @@ export class ResultCardComponent {
 
   @Input()
   public image?:string;
+
+  @Input()
+  public aditionalInfo?:string;
 }

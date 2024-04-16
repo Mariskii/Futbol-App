@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SearchedItemComponent } from './components/searched-item/searched-item.component';
 import { SharedNavbarComponent } from './components/shared-navbar/shared-navbar.component';
 import { ResultCardComponent } from './components/result-card/result-card.component';
 
@@ -8,7 +7,6 @@ import { ResultCardComponent } from './components/result-card/result-card.compon
 
 @NgModule({
   declarations: [
-    SearchedItemComponent,
     SharedNavbarComponent,
     ResultCardComponent
   ],
@@ -16,7 +14,6 @@ import { ResultCardComponent } from './components/result-card/result-card.compon
     CommonModule
   ],
   exports: [
-    SearchedItemComponent,
     SharedNavbarComponent,
     ResultCardComponent
   ]

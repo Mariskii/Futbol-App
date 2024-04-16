@@ -47,12 +47,16 @@ export class SearchTeamComponent{
   public selectedLeagueId:number = 39;
 
   onChangeLeague(id: number) {
-    this.teamsService.searchByLeagueId(id)
-      .pipe(
-        tap(teamResponse => console.log(teamResponse))
-      )
+
+    if(id !== this.selectedLeagueId) {
+
+      this.teamsService.searchByLeagueId(id)
       .subscribe(teamResponse =>
         this.searchedTeams = teamResponse.response.map(team => team.team),
       );
+      this.selectedLeagueId = id;
+
+    }
+
   }
 }
