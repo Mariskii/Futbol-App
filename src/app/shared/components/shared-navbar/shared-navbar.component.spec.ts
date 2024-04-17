@@ -11,12 +11,13 @@ describe('SharedNavbarComponent', () => {
       declarations: [SharedNavbarComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(SharedNavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
+  //El componente se crea correctamente
   it('should create', () => {
     expect(component).toBeTruthy();
   });

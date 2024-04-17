@@ -11,7 +11,7 @@ describe('ResultCardComponent', () => {
       declarations: [ResultCardComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ResultCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
