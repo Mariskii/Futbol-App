@@ -1,13 +1,29 @@
 .ligue-selector {
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
   cursor: pointer;
 }
 
 .ligue-selector:hover {
-  background-color: darkcyan;
+  background-color: #222831;
+  color: white;
 }
 
 img {
   width: 40px;
   height: 40px;
+}
+
+.spinner {
+  width: 10em;
+  height: 10em;
+}
+
+.loading-view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.search-container {
+  height: 100vh;
 }

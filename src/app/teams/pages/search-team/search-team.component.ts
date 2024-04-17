@@ -14,6 +14,8 @@ export class SearchTeamComponent{
 
   searchedTeams?:Team[];
 
+  searchingTeams:boolean = false;
+
   constructor(private teamsService: TeamsService) {}
 
   itemsLeagues: ItemLeague[] = [
@@ -48,12 +50,20 @@ export class SearchTeamComponent{
 
   onChangeLeague(id: number) {
 
+    this.searchedTeams = [];
+
     if(id !== this.selectedLeagueId) {
+
+      this.searchingTeams = true;
 
       this.teamsService.searchByLeagueId(id)
       .subscribe(teamResponse =>
-        this.searchedTeams = teamResponse.response.map(team => team.team),
+        {
+          this.searchedTeams = teamResponse.response.map(team => team.team);
+          this.searchingTeams = false;
+        }
       );
+
       this.selectedLeagueId = id;
 
     }

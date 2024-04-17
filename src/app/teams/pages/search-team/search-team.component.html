@@ -11,6 +11,17 @@
   }
 </div>
 
+@if (searchingTeams === true) {
+  <div class="d-flex flex-column m-2 p-3">
+
+    <div class="d-flex flex-column m-auto">
+        <img class="spinner" src="../../../../assets/spinner.svg" alt="">
+      <h2 class="text-light">Cargando...</h2>
+    </div>
+
+  </div>
+}
+
 @for (team of searchedTeams; track $index) {
 
   <shared-result-card
