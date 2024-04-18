@@ -1,14 +1,10 @@
 # FutbolApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.1.
+Project to test my Angular Skills and learn about testing with Jasmine and Karma. The app let you search Football teams of the 5 great leagues of Europe
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
