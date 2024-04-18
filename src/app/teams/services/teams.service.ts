@@ -9,15 +9,12 @@ import { environment } from '../../../environments/environment';
 })
 export class TeamsService {
 
+  //La api solo tiene datos hasta el año anterior, no del actual, por lo que hay que restar un año
   private pastYear:number = new Date().getFullYear()-1;
 
   constructor(private httpClient: HttpClient) { }
 
   searchByLeagueId(id: number):Observable<TeamResponse> {
-
-    //La api solo tiene datos hasta el año anterior, no del actual, por lo que hay que restar un año
-
-
     return this.httpClient.get<TeamResponse>(`${environment.API_URL}/teams`, {
       headers:{
         'X-RapidAPI-Key':environment.API_KEY,

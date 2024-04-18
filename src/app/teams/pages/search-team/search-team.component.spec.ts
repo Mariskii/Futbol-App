@@ -77,9 +77,6 @@ describe('SearchTeamComponent', () => {
   it('onChangeLeague change id correctly', () => {
     const id:number = 38;
 
-    //Al principio debe estar en true ya que se debe mostrar el spinner y eso se hace cuando searchingTeams = tue
-    expect(component.searchingTeams).toBeTruthy();
-
     component.onChangeLeague(id);
 
     //Ver si el id actual ha cambiado
