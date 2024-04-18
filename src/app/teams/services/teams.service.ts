@@ -29,8 +29,6 @@ export class TeamsService {
       params: {'league':id, 'season':this.pastYear}
     }).pipe(
       tap(response => {
-        console.log("Actualiza el cache");
-
         //Guardar los datos en cache
         this.cacheStore.selectedLeagueId = id;
         this.cacheStore.leagueTeams = response.response.map(team => team.team)

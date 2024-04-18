@@ -5,7 +5,7 @@
 
     <div (click)="onChangeLeague(item.id)"
       class="ligue-selector d-flex justify-content-center flex-row w-100 h-100 "
-      [ngClass]="{'league-selected': item.id === selectedLeagueId}">
+      [ngClass]="{'league-selected': item.id === actualLeagueId}">
       <img class="m-3" [src]="item.image" alt="item.title">
       <p class="align-self-center">{{ item.title }}</p>
     </div>
@@ -30,6 +30,6 @@
     [image]="team.logo"
     [title]="team.name"
     [aditionalInfo]="team.code"
-    [routerLink]="['/teams', selectedLeagueId.toString(), team.id.toString()]"/>
+    [routerLink]="['/teams', actualLeagueId.toString(), team.id.toString()]"/>
 
 }

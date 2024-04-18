@@ -10,7 +10,7 @@ import { ItemLeague } from '../../../shared/interfaces/item-league.interface';
   templateUrl: './search-team.component.html',
   styleUrl: './search-team.component.css'
 })
-export class SearchTeamComponent implements OnInit, AfterViewInit{
+export class SearchTeamComponent implements OnInit{
 
   searchedTeams?:Team[];
 
@@ -44,12 +44,9 @@ export class SearchTeamComponent implements OnInit, AfterViewInit{
     }
   ];
 
-  public selectedLeagueId:number = 0;
+  public actualLeagueId:number = 0;
 
   constructor(private teamsService: TeamsService) {}
-  ngAfterViewInit(): void {
-
-  }
 
   ngOnInit(): void {
 
@@ -64,7 +61,7 @@ export class SearchTeamComponent implements OnInit, AfterViewInit{
 
     this.searchedTeams = [];
 
-    if(id !== this.selectedLeagueId) {
+    if(id !== this.actualLeagueId) {
 
       this.searchingTeams = true;
 
@@ -76,13 +73,13 @@ export class SearchTeamComponent implements OnInit, AfterViewInit{
         }
       );
 
-      this.selectedLeagueId = id;
+      this.actualLeagueId = id;
 
     }
   }
 
   restoreCache() {
-    this.selectedLeagueId = this.teamsService.cacheStore.selectedLeagueId;
+    this.actualLeagueId = this.teamsService.cacheStore.selectedLeagueId;
     this.searchedTeams = this.teamsService.cacheStore.leagueTeams;
   }
 }

@@ -33,7 +33,7 @@ const teamsServiceMock: TeamResponse = {
   ]
 };
 
-fdescribe('TeamsService', () => {
+describe('TeamsService', () => {
 
   let httpMock: HttpTestingController;
   let service: TeamsService;
