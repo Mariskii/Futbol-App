@@ -44,14 +44,13 @@ export class SearchTeamComponent implements OnInit{
     }
   ];
 
-  public selectedLeagueId:number = 39;
+  public selectedLeagueId:number = 0;
 
   constructor(private teamsService: TeamsService) {}
 
   ngOnInit(): void {
-
-    //this.teamsService.searchByLeagueId(this.selectedLeagueId);
-
+    //Por defecto la primera liga de searchByLeagueId será la que muestre sus equipos
+    this.onChangeLeague(this.itemsLeagues[0].id);
   }
 
   onChangeLeague(id: number) {
