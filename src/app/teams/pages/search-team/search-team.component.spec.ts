@@ -38,7 +38,7 @@ const teamsServiceMock = {
   })
 }
 
-fdescribe('SearchTeamComponent', () => {
+describe('SearchTeamComponent', () => {
   let component: SearchTeamComponent;
   let fixture: ComponentFixture<SearchTeamComponent>;
 
@@ -76,6 +76,9 @@ fdescribe('SearchTeamComponent', () => {
   //El problema estaba en que el mock del service esperaba una response y yo le pasaba un Team, la solución es que el mock devuelva un Response
   it('onChangeLeague change id correctly', () => {
     const id:number = 38;
+
+    //Al principio debe estar en true ya que se debe mostrar el spinner y eso se hace cuando searchingTeams = tue
+    expect(component.searchingTeams).toBeTruthy();
 
     component.onChangeLeague(id);
 

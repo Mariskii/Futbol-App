@@ -10,19 +10,17 @@ import { ItemLeague } from '../../../shared/interfaces/item-league.interface';
   templateUrl: './search-team.component.html',
   styleUrl: './search-team.component.css'
 })
-export class SearchTeamComponent{
+export class SearchTeamComponent implements OnInit{
 
   searchedTeams?:Team[];
 
   searchingTeams:boolean = false;
 
-  constructor(private teamsService: TeamsService) {}
-
   itemsLeagues: ItemLeague[] = [
     {
       id: 39,
       title:'Premiere League',
-      image:'https://banner2.cleanpng.com/20180711/vg/kisspng-201617-premier-league-english-football-league-l-lion-emoji-5b460f06eeac18.5589169115313180229776.jpg'
+      image:'https://seeklogo.com/images/P/premier-league-logo-FA8C79A1C0-seeklogo.com.png'
     },
     {
       id: 140,
@@ -47,6 +45,14 @@ export class SearchTeamComponent{
   ];
 
   public selectedLeagueId:number = 39;
+
+  constructor(private teamsService: TeamsService) {}
+
+  ngOnInit(): void {
+
+    //this.teamsService.searchByLeagueId(this.selectedLeagueId);
+
+  }
 
   onChangeLeague(id: number) {
 

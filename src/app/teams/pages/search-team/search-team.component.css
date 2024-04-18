@@ -8,6 +8,11 @@
   color: white;
 }
 
+.league-selected {
+  background-color: #222831;
+  color: white;
+}
+
 img {
   width: 40px;
   height: 40px;
@@ -27,3 +32,11 @@ img {
 .search-container {
   height: 100vh;
 }
+
+@media (max-width: 767.98px) {
+
+  .leagues-container {
+    flex-wrap: wrap;
+  }
+
+ }

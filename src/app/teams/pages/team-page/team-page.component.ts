@@ -32,7 +32,6 @@ export class TeamPageComponent implements OnInit {
     this.activatedRoute.params
       .pipe(
         switchMap( ({id, leagueIdteam}) => this.teamsService.searchById(id,leagueIdteam)),
-        tap(t => console.log(t))
       )
       .subscribe( (teamResponse) => {
           if(!teamResponse) return this.router.navigateByUrl('');

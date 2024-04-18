@@ -1,9 +1,11 @@
 <shared-navbar  #navbar/>
 
-<div class="d-flex flex-row justify-content-around bg-secondary">
+<div class="leagues-container d-flex flex-row justify-content-around bg-secondary">
   @for (item of itemsLeagues; track $index) {
 
-    <div (click)="onChangeLeague(item.id)" class="ligue-selector d-flex justify-content-center flex-row w-100 h-100 ">
+    <div (click)="onChangeLeague(item.id)"
+      class="ligue-selector d-flex justify-content-center flex-row w-100 h-100 "
+      [ngClass]="{'league-selected': item.id === selectedLeagueId}">
       <img class="m-3" [src]="item.image" alt="item.title">
       <p class="align-self-center">{{ item.title }}</p>
     </div>
