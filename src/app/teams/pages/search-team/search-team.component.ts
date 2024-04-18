@@ -10,7 +10,7 @@ import { ItemLeague } from '../../../shared/interfaces/item-league.interface';
   templateUrl: './search-team.component.html',
   styleUrl: './search-team.component.css'
 })
-export class SearchTeamComponent implements OnInit{
+export class SearchTeamComponent implements OnInit, AfterViewInit{
 
   searchedTeams?:Team[];
 
@@ -47,10 +47,17 @@ export class SearchTeamComponent implements OnInit{
   public selectedLeagueId:number = 0;
 
   constructor(private teamsService: TeamsService) {}
+  ngAfterViewInit(): void {
+
+  }
 
   ngOnInit(): void {
-    //Por defecto la primera liga de searchByLeagueId será la que muestre sus equipos
-    this.onChangeLeague(this.itemsLeagues[0].id);
+
+    this.restoreCache()
+
+    //Por defecto la primera liga de searchByLeagueId será la que muestre sus equipos si no hay ningun equipo en el array
+    if(this.searchedTeams?.length === 0)
+      this.onChangeLeague(this.itemsLeagues[0].id);
   }
 
   onChangeLeague(id: number) {
@@ -72,6 +79,10 @@ export class SearchTeamComponent implements OnInit{
       this.selectedLeagueId = id;
 
     }
+  }
 
+  restoreCache() {
+    this.selectedLeagueId = this.teamsService.cacheStore.selectedLeagueId;
+    this.searchedTeams = this.teamsService.cacheStore.leagueTeams;
   }
 }
