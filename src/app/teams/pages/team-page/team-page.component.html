@@ -1,27 +1,31 @@
-<h1 class="text-light text-center p-3 bg-dark" >{{ team?.name }}</h1>
+@defer (when team) {
+  <h1 class="text-light text-center p-3 bg-dark" >{{ team?.name }}</h1>
 
-<div class="team-container d-flex justify-content-around">
+  <div class="team-container d-flex justify-content-around">
 
-  <img class="logo p-1" [src]="team?.logo" alt="Barcelona">
+    <img class="logo p-1" [src]="team?.logo" alt="Barcelona">
 
-  <ul class="team-data align-self-center">
-    <li><strong>Fundation:</strong> {{ team?.founded }}</li>
-    <li>Country: {{ team?.country }}</li>
-    <li>Abreviation: {{ team?.code }}</li>
-  </ul>
+    <ul class="team-data align-self-center">
+      <li><strong>Fundation:</strong> {{ team?.founded }}</li>
+      <li>Country: {{ team?.country }}</li>
+      <li>Abreviation: {{ team?.code }}</li>
+    </ul>
 
-</div>
+  </div>
 
-<div class="team-data m-auto">
-  <h1 class="text-light text-center p-3 bg-dark" >{{ venue?.name }}</h1>
+  <div class="team-data m-auto">
+    <h1 class="text-light text-center p-3 bg-dark" >{{ venue?.name }}</h1>
 
-  <ul class="team-data p-5 m-auto d-flex d-row justify-content-around">
-    <li>Ubication: {{ venue?.address }}</li>
-    <li>City: {{ venue?.city }}</li>
-    <li>Capacity: {{ venue?.capacity }}</li>
-    <li>Surface: {{ venue?.surface }}</li>
-  </ul>
+    <ul class="team-data p-5 m-auto d-flex d-row justify-content-around">
+      <li>Ubication: {{ venue?.address }}</li>
+      <li>City: {{ venue?.city }}</li>
+      <li>Capacity: {{ venue?.capacity }}</li>
+      <li>Surface: {{ venue?.surface }}</li>
+    </ul>
 
-</div>
+  </div>
 
-<img class="img-starium" [src]="venue?.image" alt="stadium">
+  <img class="img-starium" [src]="venue?.image" alt="stadium">
+}@placeholder {
+  <img class="team-spinner" src="../../../../assets/spinner.svg" alt="loading_spinner">
+}

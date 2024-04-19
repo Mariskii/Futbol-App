@@ -27,6 +27,17 @@
   width: 100%;
 }
 
+.team-spinner {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 15em;
+  height: 15em;
+}
+
 @media (max-width: 767.98px) {
 
   .team-container {

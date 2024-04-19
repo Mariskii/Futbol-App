@@ -121,8 +121,6 @@ fdescribe('SearchTeamComponent', () => {
     expect(component.searchingTeams).toBeFalsy();
   });
 
-
-
   it('OnInit get teams when there is no team in cache', () => {
 
     component.searchedTeams = [];
