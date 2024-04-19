@@ -40,8 +40,9 @@
 
 @media (max-width: 767.98px) {
 
-  .team-container {
+  .team-container, .stadium-data {
     flex-wrap: wrap;
+    list-style: none;
   }
 
  }

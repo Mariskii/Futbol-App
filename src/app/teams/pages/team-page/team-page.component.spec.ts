@@ -4,7 +4,6 @@ import { TeamPageComponent } from './team-page.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TeamsService } from '../../services/teams.service';
 import { of } from 'rxjs';
-import { RouterTestingModule } from '@angular/router/testing';
 import { RouterModule } from '@angular/router';
 
 const teamsServiceMock = {
@@ -85,19 +84,42 @@ describe('TeamPageComponent', () => {
     //Se han obtenido los datos del estadio
     expect(component.venue).toBeTruthy();
   });
+});
 
-  //TODO:
-  // it('getTeamFromUrlId works correctly when team is not found', () => {
+describe('TeamPageComponent with empty responses', () => {
+  let component: TeamPageComponent;
+  let fixture: ComponentFixture<TeamPageComponent>;
 
-  //   TestBed.overrideProvider(TeamsService, { useValue: teamsServiceTeamUndefinedMock });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [
+        HttpClientTestingModule,
+        RouterModule.forRoot([])
+      ],
+      declarations: [
+        TeamPageComponent
+      ],
+      providers: [
+        {
+          provide: TeamsService,
+          useValue: teamsServiceTeamUndefinedMock
+        },
+      ]
+    })
+    .compileComponents();
 
-  //   component.getTeamFromUrlId();
+    fixture = TestBed.createComponent(TeamPageComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-  //   const spyTeam = spyOn(teamsServiceTeamUndefinedMock,'searchById').and.returnValue(of(undefined))
+  it('getTeamFromUrlId works correctly when team is not found', () => {
 
-  //   expect(spyTeam).
+    component.getTeamFromUrlId();
 
-  //   expect(component.team).toBeFalsy();
+    const spyTeam = spyOn(teamsServiceTeamUndefinedMock,'searchById').and.returnValue(of(undefined))
 
-  // });
+    expect(component.team).toBeFalsy();
+
+  });
 });
